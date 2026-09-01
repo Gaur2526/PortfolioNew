@@ -1,0 +1,40 @@
+---
+title: "How I Built NodeFlow: Turning Complex Workflows into a Visual Experience"
+date: "2026-08-13"
+description: "The story behind building NodeFlow, a visual workflow builder for designing, connecting, and validating AI pipelines."
+read_time: "7 min read"
+tags: ["React", "React Flow", "FastAPI", "Python", "JavaScript"]
+---
+
+# How I Built NodeFlow
+
+Some projects start with a product idea.
+
+Others start with a technical challenge.
+
+NodeFlow started with both.
+
+The idea was simple: what if building a workflow didn't require writing everything manually?
+
+Instead of defining relationships between different components through configuration or code, users could visually create a workflow by placing nodes on a canvas and connecting them together.
+
+That idea eventually became **NodeFlow** — a visual workflow builder designed around the concept of connecting different components to create structured pipelines.
+
+What initially looked like a straightforward drag-and-drop interface quickly turned into a much deeper engineering problem involving **frontend architecture, state management, dynamic UI behavior, APIs, graph algorithms, and backend validation**.
+
+## The Intuition Behind NodeFlow
+
+The original intuition came from looking at how difficult complex workflows can become when they're represented entirely through code.
+
+Imagine having a pipeline like:
+
+```text
+Input
+  ↓
+Prompt
+  ↓
+LLM
+  ↓
+Processing
+  ↓
+Output

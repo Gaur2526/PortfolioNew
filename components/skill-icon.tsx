@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { BadgeCheck, BrainCircuit, BriefcaseBusiness, Code, Code2, Cpu, GitBranch, Hexagon, Layers3, Sparkles, Terminal, Waypoints } from "lucide-react"
+import { BadgeCheck, BrainCircuit, BriefcaseBusiness, Code, Code2, Cpu, GitBranch, Hexagon, Layers3, Sparkles, Terminal, Waypoints, Boxes, Network } from "lucide-react"
 
 // Custom high-quality SVG path components for technology logos
 const PythonIcon = () => (
@@ -232,6 +232,20 @@ export const TECH_MAP: Record<string, TechConfig> = {
     bgHover: "hover:bg-blue-500/10",
     borderHover: "hover:border-blue-500/30",
     displayName: "REST APIs",
+  },
+  mcp: {
+    icon: Boxes,
+    color: "text-fuchsia-500 hover:text-fuchsia-400",
+    bgHover: "hover:bg-fuchsia-500/10",
+    borderHover: "hover:border-fuchsia-500/30",
+    displayName: "MCP",
+  },
+  apis: {
+    icon: Network,
+    color: "text-blue-500 hover:text-blue-400",
+    bgHover: "hover:bg-blue-500/10",
+    borderHover: "hover:border-blue-500/30",
+    displayName: "APIs",
   },
   ai: {
     icon: BrainCircuit,
@@ -536,6 +550,8 @@ export function getTagStyles(name: string) {
     zustand: { bg: "bg-amber-500/10", border: "border-amber-500/30", text: "text-amber-500" },
     pydantic: { bg: "bg-violet-500/10", border: "border-violet-500/30", text: "text-violet-500" },
     restapis: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-500" },
+    mcp: { bg: "bg-fuchsia-500/10", border: "border-fuchsia-500/30", text: "text-fuchsia-500" },
+    apis: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-500" },
     ai: { bg: "bg-violet-500/10", border: "border-violet-500/30", text: "text-violet-500" },
     career: { bg: "bg-orange-500/10", border: "border-orange-500/30", text: "text-orange-500" },
     programming: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-500" },

@@ -1,0 +1,49 @@
+---
+title: "MCP vs API"
+date: "2026-09-02"
+description: "MCP and APIs are not competitors: MCP helps AI agents discover and orchestrate tools, while APIs execute the underlying work."
+read_time: "5 min read"
+tags: ["MCP", "APIs", "AI", "Software Engineering"]
+cover_image: "/mcp-vs-api-cover-image.png"
+---
+
+"MCP" gets thrown around like it's about to make APIs obsolete. It isn't — and understanding why says a lot about how AI agents actually work.
+
+## What's an API?
+
+APIs (REST, GraphQL, gRPC) are the plumbing of software — a defined contract letting one program call another and get a predictable response. They're built for developers who read the docs and hardcode a known integration.
+
+## What's MCP?
+
+The Model Context Protocol is an open standard Anthropic introduced in late 2024, built specifically for how AI models discover and use tools. Instead of you writing glue code for every "call this endpoint with this payload," MCP standardizes that whole negotiation. A **host** (like Claude Desktop) talks through a **client** to **servers** that expose tools in a consistent format — whether the server wraps GitHub, Slack, or a database.
+
+The protocol has matured fast: it's now governed by the vendor-neutral Agentic AI Foundation under the Linux Foundation, backed by Anthropic, OpenAI, Block, AWS, Google, Microsoft, and others.
+
+## The core difference
+
+| | API | MCP |
+| --- | --- | --- |
+| Built for | Software calling software | AI models discovering and using tools |
+| Discovery | Static — hardcoded per integration | Dynamic — queried at runtime |
+| Auth/format | Varies per API | Standardized everywhere |
+| Integration cost | One per pairing (the M×N problem) | One per tool, reusable by any AI app |
+
+Think of APIs as Lego blocks and MCP as the universal connector plus instruction manual that lets an AI grab the right blocks itself. Under the hood, most MCP servers are just wrappers around REST or gRPC endpoints — MCP standardizes the *discovery and invocation* layer; the API still does the actual work.
+
+## So, can MCP replace APIs?
+
+No — that's not its job:
+
+- **Different consumers.** APIs serve developers writing deterministic code; MCP serves agents reasoning about which tool to use.
+- **MCP is usually built on APIs**, not instead of them.
+- **Non-agentic calls** (app-to-backend, service-to-service) don't need MCP at all.
+- **Raw performance** — tight, high-throughput system-to-system calls are still better served by a well-designed REST or gRPC API.
+
+Where MCP genuinely helps is the **M×N integration problem**: without it, connecting M AI apps to N tools needs M×N custom integrations. MCP collapses that to M+N.
+
+## Takeaway
+
+Building a backend-to-backend feature? Use an API, as always. Building an agent that needs to dynamically pick and chain tools? That's MCP's job — and it's usually sitting in front of an API anyway. They're not competitors; MCP orchestrates, APIs execute.
+
+
+For a much more detailed and clear explanation, watch this video by Hitesh Choudhary: https://www.youtube.com/watch?v=dZyQNy3-HjU&t=1144s

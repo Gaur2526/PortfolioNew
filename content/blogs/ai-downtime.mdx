@@ -1,0 +1,42 @@
+---
+title: "When ChatGPT, Claude, and Grok Went Down Together"
+date: "2026-09-04"
+description: "A simultaneous AI outage is a reminder that competing products can still depend on the same cloud infrastructure underneath."
+read_time: "4 min read"
+tags: ["AI", "Cloud", "Infrastructure", "Technology"]
+cover_image: "/ai-outage-shared-cloud.png"
+---
+
+Yesterday, within the same couple of hours, ChatGPT, Claude, and Grok all went down. Not one at a time — together.
+
+I was mid-task on both ChatGPT and Claude when it happened, and my first thought was: “Did I break something?” Turns out, no — it was a full-blown industry-wide outage, and it is a great case study in how modern AI infrastructure works (and fails).
+
+## What happened
+
+- Anthropic's status page showed Claude Opus 5 and Opus 4.8 hitting elevated error rates first.
+- It later expanded to a few more model variants before recovering a few hours later.
+- OpenAI reported the same: elevated errors across ChatGPT and Codex.
+- xAI's Grok reported issues around the same window too.
+
+Three separate companies, three separate model architectures, all degrading at roughly the same time. That is not a coincidence you would expect from independent systems.
+
+## The likely real cause
+
+Multiple reports pointed to Microsoft Azure — the cloud infrastructure that several AI providers run their compute on — as also experiencing issues at the same time. So the AI models themselves probably were not the root problem. The shared cloud layer underneath them likely was.
+
+This is the part that stuck with me: even companies that compete fiercely with each other — OpenAI, Anthropic, and xAI — often depend on the same handful of cloud providers, including AWS, Azure, and GCP, for the raw compute that powers their models. When that foundational layer stumbles, it does not matter how good your model or product is. Everyone above it feels it.
+
+## Why AI outages happen in general
+
+A few common causes, beyond this one incident:
+
+- Newer and larger models often get hit first because they are more compute-hungry and have less spare capacity to absorb spikes.
+- Sudden demand surges can overload inference servers faster than autoscaling can react.
+- A bad deployment or configuration push can spike error rates until it is rolled back.
+- Shared cloud dependencies mean one provider's bad day can quietly become everyone else's bad day.
+
+## The takeaway for us as engineers
+
+We talk a lot about writing resilient code: retries, fallbacks, and circuit breakers. But this is a reminder that reliability is not just about your application layer — it is about every layer underneath it too, most of which you do not control and cannot see.
+
+Next time three unrelated products go down at once, the interesting question is not “which one broke?” It is “what do they all depend on?”

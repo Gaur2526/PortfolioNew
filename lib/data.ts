@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     title: 'Collab Editor',
     description: 'Collaborative document editor with secure authentication, document management, version history, and AI-powered writing assistance for summarization, grammar correction, rewriting, and action-item extraction.',
-    link: 'https://akash-gaur-full-stack-assignment.vercel.app/',
+    link: 'https://akash-collab-editor.vercel.app/',
     tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Google Gemini'],
   }
 ]

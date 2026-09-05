@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { BadgeCheck, BrainCircuit, BriefcaseBusiness, Code, Code2, Cpu, GitBranch, Hexagon, Layers3, Sparkles, Terminal, Waypoints, Boxes, Network } from "lucide-react"
+import { BadgeCheck, BrainCircuit, BriefcaseBusiness, Code, Code2, Cpu, GitBranch, Hexagon, Layers3, Sparkles, Terminal, Waypoints, Boxes, Network, KeyRound, ShieldCheck } from "lucide-react"
 
 // Custom high-quality SVG path components for technology logos
 const PythonIcon = () => (
@@ -246,6 +246,20 @@ export const TECH_MAP: Record<string, TechConfig> = {
     bgHover: "hover:bg-blue-500/10",
     borderHover: "hover:border-blue-500/30",
     displayName: "APIs",
+  },
+  ssh: {
+    icon: KeyRound,
+    color: "text-emerald-500 hover:text-emerald-400",
+    bgHover: "hover:bg-emerald-500/10",
+    borderHover: "hover:border-emerald-500/30",
+    displayName: "SSH",
+  },
+  cybersecurity: {
+    icon: ShieldCheck,
+    color: "text-rose-500 hover:text-rose-400",
+    bgHover: "hover:bg-rose-500/10",
+    borderHover: "hover:border-rose-500/30",
+    displayName: "Cybersecurity",
   },
   ai: {
     icon: BrainCircuit,
@@ -552,6 +566,8 @@ export function getTagStyles(name: string) {
     restapis: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-500" },
     mcp: { bg: "bg-fuchsia-500/10", border: "border-fuchsia-500/30", text: "text-fuchsia-500" },
     apis: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-500" },
+    ssh: { bg: "bg-emerald-500/10", border: "border-emerald-500/30", text: "text-emerald-500" },
+    cybersecurity: { bg: "bg-rose-500/10", border: "border-rose-500/30", text: "text-rose-500" },
     ai: { bg: "bg-violet-500/10", border: "border-violet-500/30", text: "text-violet-500" },
     career: { bg: "bg-orange-500/10", border: "border-orange-500/30", text: "text-orange-500" },
     programming: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-500" },
